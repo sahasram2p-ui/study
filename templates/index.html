@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudyPilot - your focused AI study assistant">
+    <title>StudyPilot | AI Study Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-mark">SP</div>
+            <div>
+                <div class="brand-name">StudyPilot</div>
+                <div class="brand-subtitle">AI Study Assistant</div>
+            </div>
+        </div>
+
+        <button class="new-chat" id="newChatBtn">
+            <span class="plus">+</span>
+            <span>New Study Chat</span>
+        </button>
+
+        <div class="side-section">
+            <div class="section-label">Study Topics</div>
+            <button class="topic-btn" data-question="Explain a difficult concept in simple words.">
+                <span>◈</span><span>Concept Learning</span>
+            </button>
+            <button class="topic-btn" data-question="Create a practical study plan for my upcoming exams.">
+                <span>◷</span><span>Study Planning</span>
+            </button>
+            <button class="topic-btn" data-question="Give me practice questions for an academic topic.">
+                <span>◇</span><span>Practice & Revision</span>
+            </button>
+            <button class="topic-btn" data-question="Help me understand this programming topic step by step.">
+                <span>&lt;/&gt;</span><span>Coding Learning</span>
+            </button>
+            <button class="topic-btn" data-question="Help me improve my academic English and grammar.">
+                <span>Aa</span><span>English Learning</span>
+            </button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="scope-card">
+                <div class="scope-icon">✓</div>
+                <div>
+                    <strong>Study Focused</strong>
+                    <p>Answers are limited to education and student learning.</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+            <div class="topbar-title">
+                <span class="online-dot"></span>
+                <span>StudyPilot</span>
+            </div>
+            <button class="icon-btn" id="clearBtn" aria-label="Clear chat" title="Clear chat">⌫</button>
+        </header>
+
+        <section class="chat-area" id="chatArea">
+            <div class="welcome" id="welcome">
+                <div class="hero-icon">✦</div>
+                <div class="eyebrow">YOUR PERSONAL STUDY COMPANION</div>
+                <h1>Learn smarter with <span>StudyPilot</span></h1>
+                <p>Understand concepts, prepare for exams, build study plans, and turn difficult topics into clear, manageable lessons.</p>
+
+                <div class="quick-grid">
+                    <button class="quick-card" data-question="Explain photosynthesis in simple words with an example.">
+                        <span class="card-icon">🧠</span>
+                        <span><b>Learn a concept</b><small>Make difficult topics simple</small></span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="quick-card" data-question="Create a 7-day study plan for my upcoming exams.">
+                        <span class="card-icon">📅</span>
+                        <span><b>Build a study plan</b><small>Organize your preparation</small></span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="quick-card" data-question="Give me 10 practice questions on algebra with answers.">
+                        <span class="card-icon">✎</span>
+                        <span><b>Practice questions</b><small>Test your understanding</small></span>
+                        <span class="arrow">→</span>
+                    </button>
+                    <button class="quick-card" data-question="Explain Python loops step by step for a beginner.">
+                        <span class="card-icon">💡</span>
+                        <span><b>Study coding</b><small>Learn programming clearly</small></span>
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="messages" id="messages"></div>
+        </section>
+
+        <section class="composer-wrap">
+            <form class="composer" id="chatForm">
+                <textarea id="messageInput" rows="1" placeholder="Ask StudyPilot a study question..." autocomplete="off"></textarea>
+                <button type="submit" class="send-btn" id="sendBtn" aria-label="Send message">
+                    <span>↑</span>
+                </button>
+            </form>
+            <div class="composer-note">StudyPilot is for education and learning support. Always verify important information with trusted academic sources.</div>
+        </section>
+    </main>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
